@@ -1,0 +1,87 @@
+/*****
+COLORS
+*****/
+
+$teal: #05A8AA;
+$purple: #7B43CC;
+$blue: #0C7DD5;
+$dark: #0D1321;
+$light: #FAFBFC;
+$light-blue: #F3F6F7;
+$med-gray: #777B83;
+$red: #CC435A;
+
+$gradient: linear-gradient(90deg, $purple 0%, $blue 50%, $teal 100%);
+
+
+@use "sass:map";
+
+$theme-colors: (
+ "teal": $teal,
+ "purple": $purple,
+ "blue": $blue,
+ "dark": $dark,
+ "light": $light,
+ "light-blue": $light-blue,
+ "med-gray": $med-gray,
+ "red": $red,
+);
+
+@each $name, $color in $theme-colors {
+  .bg-#{$name} {
+    background: $color;
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color, 0.5);
+      outline: none;
+    }
+  }
+  .text-#{$name} {
+    color: $color;
+  }
+  .btn.bg-#{$name} {
+    border: 2px solid $color;
+    &:hover {
+      background: rgba($color, 0);
+      border-color: $color;
+      color: $color !important;
+    }
+  }
+}
+
+$fw-light: 300;
+$fw-demi: 600;
+$fw-bold: 700;
+
+* {
+  box-sizing: border-box;
+  font-family: urbane, sans-serif;
+  color: $dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 20vw;
+  letter-spacing: -0.5vw;
+  line-height: 1.1em;
+  margin: 0;
+  color: $teal;
+  .g-hightlight {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+h2 {
+  font-weight: $fw-light;
+  font-size: calc(20px + 1vw)
+}
+
+main {
+  width: 95vw;
+  margin: auto;
+}

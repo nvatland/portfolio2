@@ -1,0 +1,10 @@
+<nav>
+  <ul class="d-flex">
+    {% if page.url != '/' %}
+    <li class="brand"><a href="/" class="g-highlight">nv</a></li>
+    {% endif %}
+    <li><a href="/about" class="text-purple {% if page.url == '/about' %}active{% endif %}">about</a></li>
+    <li><a href="/work" class="text-blue {% if page.url == '/work' %}active{% endif %}">work</a></li>
+    <li><a href="/contact" class="text-teal {% if page.url == '/contact' %}active{% endif %}">contact</a></li>
+  </ul>
+</nav>
