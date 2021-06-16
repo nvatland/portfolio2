@@ -33,6 +33,7 @@ plugins:
   - jekyll-feed
 sass:
   style: compressed
+permalink: /:slug
 
 collections:
   projects:

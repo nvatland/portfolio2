@@ -1,5 +1,5 @@
-@media screen and (min-width: 1400px) {
-  main, nav, footer {
+@media screen and (min-width: $xl) {
+  main, .nav-container, footer {
     width: 1200px;
     margin: auto;
   }
@@ -9,5 +9,15 @@
       font-size: 200px;
       line-height: 1em;
     }
+    nav .nav-container {
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $md) {
+  .row.justify-content-end {
+    justify-content: flex-start;
+    margin-left: 1.5rem;
   }
 }

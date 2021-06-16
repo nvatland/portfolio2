@@ -1,8 +1,13 @@
 ---
 layout: page
+projects:
+  - Hello
+  - Goodbye
 ---
 <header class="p-4">
   <h1>hi, i'm <div><span class="g-hightlight">nicole</span></div></h1>
-  <h2>&nbsp;I design and code interactive websites.</h2>
+  <h2>I design and code interactive websites.</h2>
 </header>
 {% include nav.html home="true" %}
+
+{% include project_preview.html projects=page.projects %}

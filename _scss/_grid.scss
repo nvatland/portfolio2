@@ -9,26 +9,42 @@
 }
 
 @for $i from 1 to 12 {
-  .col-desktop-#{$i} {
+  .col-#{$i} {
     padding: 0.5rem;
     flex: 0 0 (100%/12 * $i);
     max-width: (100%/12 * $i);
     align-content: stretch;
   }
+}
 
-  .col-tablet-#{$i} {
-    padding: 0.5rem;
-    flex: 0 0 (100%/12 * $i);
-    max-width: (100%/12 * $i);
-    align-content: stretch;
+@media screen and (min-width: 1200px) {
+  @for $i from 1 to 12 {
+    .col-desktop-#{$i} {
+      padding: 0.5rem;
+      flex: 0 0 (100%/12 * $i);
+      max-width: (100%/12 * $i);
+      align-content: stretch;
+    }
   }
+}
 
-  .col-mobile-#{$i} {
-    padding: 0.5rem;
-    flex: 0 0 (100%/12 * $i);
-    max-width: (100%/12 * $i);
-    align-content: stretch;
+@media screen and (min-width: 800px) {
+  @for $i from 1 to 12 {
+    .col-tablet-#{$i} {
+      padding: 0.5rem;
+      flex: 0 0 (100%/12 * $i);
+      max-width: (100%/12 * $i);
+      align-content: stretch;
+    }
   }
+}
+
+
+
+
+
+.mr-col-1 {
+  margin-right: (100%/12);
 }
 
 @for $j from 0 to 6 {

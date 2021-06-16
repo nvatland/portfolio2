@@ -1,0 +1,19 @@
+{% for project in include.projects %}
+<div class="row project-{% cycle 'purple', 'blue', 'teal' %} justify-content-center align-items-center p-0 m-4 position-relative">
+  <!-- <div class="project-container"> -->
+    <figure class="project-image-container col-tablet-4 col-10 bg-dark m-0 position-absolute">
+      <div class="project-image">
+        <img src="" alt="">
+      </div>
+    </figure>
+    <div class="text-container col-tablet-8 col-10 bg-med-gray">
+      <div class="text-wrap pl-5">
+        <h3>Hello</h3>
+        <p>Description goes here.</p>
+        <a href="">learn more <span class="pl-2">></span></a>
+
+      </div>
+    <!-- </div> -->
+  </div>
+</div>
+{% endfor %}

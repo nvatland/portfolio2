@@ -1,7 +1,7 @@
 ---
 layout: secondary
 title: About Me
-subhead:
+subhead: Puzzle-loving developer.
 description_html: <p>I am a Webby Award-Winning front-end web developer with an eye for design. I am currently a UI & UX Designer for Walt Disney Animation Studios based in Los Angeles, California.</p><p>Blurb here about animations, accessibility, coding, etc</p><p>Blurb here about other things like motion graphics, print design, etc</p>
 skills:
   web:
@@ -28,29 +28,29 @@ skills:
     - Premiere
     - InDesign
     - Keynote
+permalink: /:basename
 ---
 <header class="p-4">
   <h1>about <div><span class="g-hightlight">me</span></div></h1>
-  <h2>&nbsp;I design and code interactive websites.</h2>
+  <h2>{{page.subhead}}</h2>
 </header>
 <section>
   <div class="row justify-content-end">
-    <div class="col-tablet-6">
+    <div class="col-tablet-6 col-10 mr-col-1">
       {{page.description_html}}
       <h3 class="text-purple">skills</h3>
       <div class="row">
-        <ul class="col-mobile-6">
+        <ul class="col-6 bullet-purple">
           {% for skill in page.skills.web %}
             <li>{{skill}}</li>
             {% endfor %}
         </ul>
-        <ul class="col-mobile-6">
+        <ul class="col-6 bullet-purple">
           {% for skill in page.skills.software %}
             <li>{{skill}}</li>
             {% endfor %}
         </ul>
       </div>
     </div>
-    <div class="col-tablet-1"></div>
   </div>
 </section>
