@@ -1,8 +1,56 @@
 ---
-layout: page
+layout: secondary
+title: About Me
+subhead:
+description_html: <p>I am a Webby Award-Winning front-end web developer with an eye for design. I am currently a UI & UX Designer for Walt Disney Animation Studios based in Los Angeles, California.</p><p>Blurb here about animations, accessibility, coding, etc</p><p>Blurb here about other things like motion graphics, print design, etc</p>
+skills:
+  web:
+    - HTML
+    - CSS
+    - JavaScript
+    - SASS
+    - GSAP
+    - ScrollTrigger
+    - Jekyll
+    - React
+    - Angular
+    - NodeJS
+    - Git
+    - PHP
+    - MySQL
+  software:
+    - Sketch
+    - Figma
+    - Adobe XD
+    - Illustrator
+    - Photoshop
+    - After Effects
+    - Premiere
+    - InDesign
+    - Keynote
 ---
 <header class="p-4">
-  <h1>hi, i'm <span class="g-hightlight">nicole</span></h1>
+  <h1>about <div><span class="g-hightlight">me</span></div></h1>
   <h2>&nbsp;I design and code interactive websites.</h2>
 </header>
-{% include nav.html home="true" %}
+<section>
+  <div class="row justify-content-end">
+    <div class="col-tablet-6">
+      {{page.description_html}}
+      <h3 class="text-purple">skills</h3>
+      <div class="row">
+        <ul class="col-mobile-6">
+          {% for skill in page.skills.web %}
+            <li>{{skill}}</li>
+            {% endfor %}
+        </ul>
+        <ul class="col-mobile-6">
+          {% for skill in page.skills.software %}
+            <li>{{skill}}</li>
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="col-tablet-1"></div>
+  </div>
+</section>

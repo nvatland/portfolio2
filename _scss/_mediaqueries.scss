@@ -1,0 +1,13 @@
+@media screen and (min-width: 1400px) {
+  main, nav, footer {
+    width: 1200px;
+    margin: auto;
+  }
+  main {
+    width: 1200px;
+    h1 {
+      font-size: 200px;
+      line-height: 1em;
+    }
+  }
+}
