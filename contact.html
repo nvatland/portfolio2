@@ -1,0 +1,41 @@
+---
+layout: secondary
+title: Contact Me
+subhead: Let's work together!
+permalink: /:basename
+---
+
+<header class="p-4">
+  <h1 class="text-teal">contact <div><span class="g-highlight">me</span></div></h1>
+  <h2>{{page.subhead}}</h2>
+</header>
+<section>
+  <div class="row justify-content-end">
+    <div class="col-tablet-6 col-10 mr-col-1">
+      <p>Form will go here.</p>
+      <button type="button" name="button" onclick="submitForm()">Test</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  // const url = 'https://script.google.com/macros/s/AKfycbxWce0Xh16A1rVr2RT10M5Unhgmr25LjW8fXCf20F-OwRJHS8o6eGVjZoBwCN73mIqm-w/exec';
+
+  const url = 'https://script.google.com/macros/s/AKfycbxuPCSBy6trIsE1YQosGrPINIjLP9SCRmj3WACogytq/dev'
+
+  function submitForm() {
+    let data = {
+      'hey': 'hello'
+    }
+    console.log('submitForm called');
+    fetch(url, {
+     method: 'post',
+     body: JSON.stringify(data)
+   }).then(response => console.log(response))
+    .then(data => console.log(data))
+    .catch((error) => {
+  console.error('Error:', error);
+})
+  }
+
+</script>

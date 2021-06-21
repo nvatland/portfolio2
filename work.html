@@ -1,0 +1,15 @@
+---
+layout: secondary
+title: My Work
+subhead: Crafting digital experiences.
+permalink: /:basename
+---
+
+<header class="p-4">
+  <h1 class="text-blue">my <div><span class="g-highlight">work</span></div></h1>
+  <h2>{{page.subhead}}</h2>
+</header>
+{% assign projects = site.projects | sort: "timestamp" | reverse %}
+<section class="projects">
+  {% include project_preview.html projects=projects %}
+</section>

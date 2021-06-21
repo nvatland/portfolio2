@@ -29,7 +29,7 @@
 }
 
 @media screen and (min-width: 800px) {
-  @for $i from 1 to 12 {
+  @for $i from 1 to 13 {
     .col-tablet-#{$i} {
       padding: 0.5rem;
       flex: 0 0 (100%/12 * $i);

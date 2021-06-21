@@ -1,0 +1,38 @@
+---
+layout: secondary
+---
+
+<section>
+  <div class="row justify-content-end">
+    <div class="col-tablet-6 col-10 mr-col-1">
+      <h2 class="text-blue ml-0">
+        <span class="work-sub text-med-gray">work</span>
+        {{page.title}}
+      </h2>
+      {{page.description}}
+      {% if page.live_url and page.live_url != '' %}
+      <div>
+        <a href="{{page.live_url}}" target="_blank" class="text-blue">visit site &rsaquo;</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="mt-5">
+  <div class="row justify-content-center d-flex">
+    {% for item in page.assets %}
+      {% if item._type == 'image' %}
+        <figure class="col-10 col-tablet-{{item.col_width}}">
+          <img src="{{item.image}}" alt="{{item.image_alt}}" class="w-100">
+        </figure>
+      {% endif %}
+
+      {% if item._type == 'video' %}
+        <div class="col-10 col-tablet-{{item.col_width}}">
+          <video src="{{item.video_url}}" autoplay playsinline muted loop alt="{{item.image_alt}}" class="w-100">
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

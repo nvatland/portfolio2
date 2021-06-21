@@ -1,13 +1,15 @@
 ---
 layout: page
-projects:
-  - Hello
-  - Goodbye
 ---
 <header class="p-4">
-  <h1>hi, i'm <div><span class="g-hightlight">nicole</span></div></h1>
-  <h2>I design and code interactive websites.</h2>
+  <h1>hi, i'm <div><span class="g-highlight">nicole</span></div></h1>
+  <h2 class="mb-0">I design and code interactive websites.</h2>
 </header>
 {% include nav.html home="true" %}
-
-{% include project_preview.html projects=page.projects %}
+{% assign projects = site.projects | sort: "timestamp" | reverse | slice: 0, 2 %}
+<section class="projects mt-5">
+  {% include project_preview.html projects=projects %}
+  <div class="pl-5">
+    <a href="/work" class="text-med-gray">see all work &rsaquo;</a>
+  </div>
+</section>

@@ -1,16 +1,18 @@
 {% for project in include.projects %}
-<div class="row project-{% cycle 'purple', 'blue', 'teal' %} justify-content-center align-items-center p-0 m-4 position-relative">
+{% capture color %}{% cycle 'purple', 'blue', 'teal' %}{% endcapture %}
+<div class="row project-container project-{{color}} justify-content-end align-items-center p-0 mx-5 my-2 position-relative">
   <!-- <div class="project-container"> -->
-    <figure class="project-image-container col-tablet-4 col-10 bg-dark m-0 position-absolute">
+    <figure class="project-image-container col-tablet-4 col-10 bg-{{color}} m-0 position-absolute">
       <div class="project-image">
-        <img src="" alt="">
+        <img src="{{project.thumbnail_image}}" alt="{{project.thumbnail_alt}}" style="object-position: {{project.thumbnail_position | default: 'left top'}}">
       </div>
+      <a href="{{project.url}}"><span class="sr-only">view project {{project.title}}</span></a>
     </figure>
-    <div class="text-container col-tablet-8 col-10 bg-med-gray">
+    <div class="text-container col-tablet-10 col-10 bg-med-gray">
       <div class="text-wrap pl-5">
-        <h3>Hello</h3>
-        <p>Description goes here.</p>
-        <a href="">learn more <span class="pl-2">></span></a>
+        <h3 class="text-{{color}}">{{project.title}}</h3>
+        <p>{{project.excerpt}}</p>
+        <div><a href="{{project.url}}" class="text-{{color}}">learn more &rsaquo;</a></div>
 
       </div>
     <!-- </div> -->
