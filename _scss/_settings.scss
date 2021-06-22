@@ -11,6 +11,8 @@ $light-blue: #F3F6F7;
 $light-gray: #D2D4D6;
 $med-gray: #777B83;
 $red: #CC435A;
+$white: #fff;
+$green: #68AA05;
 
 $gradient: linear-gradient(90deg, $purple 0%, $blue 50%, $teal 100%);
 
@@ -194,6 +196,12 @@ a {
       transform: scaleX(1);
     }
   }
+  &.link-solid {
+    letter-spacing: 0;
+    &::before, &::after {
+      bottom: 0;
+    }
+  }
 }
 
 span.sr-only {
@@ -204,4 +212,92 @@ overflow: hidden;
 position: absolute;
 white-space: nowrap;
 width: 1px;
+}
+
+form {
+  .form-group {
+    margin-bottom: 30px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  label {
+      font-weight: bold;
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-transform: lowercase;
+      color: $med-gray;
+
+  }
+  input, textarea {
+    background: $light-blue;
+    border: 3px solid $med-gray;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 7px 10px;
+    margin-top: 5px;
+    transition: all 0.3s;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 1px 4px rgba($med-gray, 0.2);
+      &:valid {
+        box-shadow: 0 0 1px 2px rgba($green, 0.3);
+      }
+    }
+    &:valid {
+      border-color: $green;
+      + label {
+        color: $green;
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+    height: 200px;
+  }
+  button[type="submit"] {
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    color: $light;
+    padding: 5px 15px;
+    background: $med-gray;
+    border: 3px solid $med-gray;
+    outline: none;
+    border-radius: 5px;
+  }
+  &:valid button[type="submit"] {
+    background: $green;
+    border-color: $green;
+    cursor: pointer;
+    &:focus {
+      box-shadow: 0 0 1px 2px rgba($green, 0.3);
+    }
+  }
+  .submitted {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+    transform: translateY(10px);
+    &.success {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}
+
+.twitter-tweet {
+  opacity: 0;
+  transition: all 0.3s;
+  &.twitter-tweet-rendered {
+    opacity: 1;
+  }
+}
+.twitter-tweet iframe {
+  width: 100%;
 }

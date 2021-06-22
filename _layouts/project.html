@@ -2,7 +2,7 @@
 layout: secondary
 ---
 
-<section>
+<section class="mt-3">
   <div class="row justify-content-end">
     <div class="col-tablet-6 col-10 mr-col-1">
       <h2 class="text-blue ml-0">
@@ -23,16 +23,23 @@ layout: secondary
   <div class="row justify-content-center d-flex">
     {% for item in page.assets %}
       {% if item._type == 'image' %}
-        <figure class="col-10 col-tablet-{{item.col_width}}">
+        <figure class="col-{{item.col_width}}">
           <img src="{{item.image}}" alt="{{item.image_alt}}" class="w-100">
         </figure>
       {% endif %}
 
       {% if item._type == 'video' %}
-        <div class="col-10 col-tablet-{{item.col_width}}">
+        <div class="col-{{item.col_width}}">
           <video src="{{item.video_url}}" autoplay playsinline muted loop alt="{{item.image_alt}}" class="w-100">
         </div>
       {% endif %}
+
+      {% if item._type == 'tweet' %}
+      <div class="col-6 col-tablet-4">
+        {{item.tweet}}
+        </div>
+      {% endif%}
     {% endfor %}
+    {{content}}
   </div>
 </section>

@@ -20,4 +20,38 @@
     justify-content: flex-start;
     margin-left: 1.5rem;
   }
+  .project-container {
+    flex-direction: column;
+    padding: 1rem;
+    align-items: flex-start !important;
+    &.project-purple {
+      background: rgba($purple, 0.05);
+
+    }
+    &.project-teal {
+      background: rgba($teal, 0.05);
+
+    }
+    &.project-blue {
+      background: rgba($blue, 0.05);
+
+    }
+    figure {
+      position: relative;
+      box-shadow: unset !important;
+      background: transparent;
+      width: 100%;
+      height: auto;
+      &:hover {
+        transform: scale(1);
+      }
+    }
+    .text-container {
+      padding: 1.5rem !important;
+      background: transparent !important;
+      .text-wrap {
+        padding: 0;
+      }
+    }
+  }
 }
