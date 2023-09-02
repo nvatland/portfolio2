@@ -6,13 +6,13 @@
       <div class="project-image">
         <img src="{{project.thumbnail_image}}" alt="{{project.thumbnail_alt}}" style="object-position: {{project.thumbnail_position | default: 'left top'}}" width="600" height="600">
       </div>
-      <a href="{{project.url}}"><span class="sr-only">view project {{project.title}}</span></a>
+      <a href="{{project.url}}.html"><span class="sr-only">view project {{project.title}}</span></a>
     </figure>
     <div class="text-container col-tablet-10 col-12 bg-med-gray">
       <div class="text-wrap px-5">
         <h3 class="text-{{color}}">{{project.title}}</h3>
         <p>{{project.excerpt}}</p>
-        <div class="link"><a href="{{project.url}}" class="text-{{color}}">learn more &rsaquo;</a></div>
+        <div class="link"><a href="{{project.url}}.html" class="text-{{color}}">learn more &rsaquo;</a></div>
 
       </div>
     <!-- </div> -->
