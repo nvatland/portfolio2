@@ -1,0 +1,75 @@
+paths:
+  uploads: uploads
+  data: _data
+  layouts: _layouts
+  includes: _includes
+collections_config:
+  pages:
+    output: true
+    filter: strict
+    icon: notes
+    _editables: {}
+    _inputs: {}
+    _select_data: {}
+    _structures: {}
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas: {}
+  projects:
+    path: _projects
+    output: true
+    filter: {}
+    icon: notes
+    sort: {}
+    _editables: {}
+    _inputs:
+      description:
+        type: markdown
+        options:
+          allow_resize: true
+          initial_height: 320
+          bold: true
+          bulletedlist: true
+          code: true
+          copyformatting: true
+          expandable: true
+          horizontalrule: true
+          image_size_attributes: true
+          indent: true
+          italic: true
+          link: true
+          numberedlist: true
+          outdent: true
+          redo: true
+          removeformat: true
+          resize_style: contain
+          table: true
+          undo: true
+        cascade: true
+    _select_data: {}
+    _structures: {}
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas: {}
+_inputs:
+  categories:
+    type: multiselect
+    options:
+      allow_create: true
+      empty_type: array
+    cascade: true
+  tags:
+    type: multiselect
+    options:
+      allow_create: true
+      empty_type: array
+    cascade: true
+_select_data:
+  sass:
+    style: compressed
+_structures: {}
+_editables: {}
+data_config: {}
+timezone: Etc/UTC
