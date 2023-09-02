@@ -47,6 +47,25 @@ collections_config:
           table: true
           undo: true
         cascade: true
+      timestamp:
+        type: datetime
+        options:
+          timezone: US/Pacific
+        cascade: true
+      live_url:
+        type: url
+        cascade: true
+      assets:
+        type: array
+        options:
+          preview: {}
+          structures:
+            style: modal
+            id_key: _type
+            values:
+              - id: video
+              - id: image
+        cascade: true
     _select_data: {}
     _structures: {}
     disable_add: false
